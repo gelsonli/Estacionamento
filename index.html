@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacionamento Seguro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Estacionamento Seguro</h1>
+        
+        <!-- Formulário de Registro -->
+        <form id="parkingForm">
+            <label for="plate">Placa do Veículo:</label>
+            <input type="text" id="plate" name="plate" required>
+
+            <label for="type">Tipo de Veículo:</label>
+            <select id="type" name="type" required>
+                <option value="moto">Moto</option>
+                <option value="carro">Carro</option>
+                <option value="van">Van</option>
+                <option value="carrinho-de-lanche">Carrinho de Lanche</option>
+            </select>
+
+            <label for="details">Detalhes do Veículo (ex: arranhões, falta de retrovisor, etc.):</label>
+            <textarea id="details" name="details" rows="3"></textarea>
+
+            <button type="submit">Registrar</button>
+        </form>
+
+        <!-- Campo de busca por placa -->
+        <div id="searchSection">
+            <h2>Consultar Veículo</h2>
+            <input type="text" id="searchPlate" placeholder="Digite a placa do veículo">
+            <button id="searchButton">Procurar</button>
+        </div>
+
+        <!-- Botão para impressão do cupom -->
+        <button id="printReceipt" style="display:none;">Imprimir Cupom</button>
+
+        <!-- Div para exibir veículos registrados -->
+        <div id="parkingSpots"></div>
+
+        <!-- Exemplo de como o cupom deve ser impresso -->
+        <div id="receiptExample">
+            <h2>Exemplo de Cupom</h2>
+            <img src="cupom-exemplo.png" alt="Exemplo de Cupom" class="receipt-img">
+            <p>O cupom deve incluir a placa, tipo de veículo, hora de entrada, número da vaga e quaisquer detalhes observados. Na saída, deve incluir o tempo total estacionado.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
